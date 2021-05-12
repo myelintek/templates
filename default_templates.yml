@@ -1,0 +1,55 @@
+- name: Image Classification
+  description: Image Classification in tensorflow
+  version: "1.0"
+  image: myelintek/classification:1.0
+  gpu: 1
+  hashtag:
+    - image classification
+    - tensorflow
+  volumes:
+    - mnist:/mlsteam/data
+
+- name: Pytorch Cifar10
+  description: Cifar10 in Pytorch
+  version: "1.0"
+  image: myelintek/pytorch-cifar10:1.0
+  gpu: 1
+  hashtag:
+    - classification
+    - pytorch
+  volumes:
+    - cifar10:/mlsteam/data/cifar10
+
+- name: Triton Server
+  description: Triton Server Example
+  version: "1.0"
+  image: myelintek/triton:1.0
+  gpu: 1
+  hashtag:
+    - triton
+  volumes:
+    - triton-models:/mlsteam/data/models
+
+- name: YOLOv3
+  description: YOLOv3 with wrapper tool
+  version: "1.0"
+  image: myelintek/yolov3:1.0
+  gpu: 1
+  hashtag:
+    - yolov3
+    - darknet
+    - object detection
+  volumes:
+    - yolo-sample:/mlsteam/data/yolo
+
+- name: YOLOv4
+  description: YOLOv4 with wrapper tool
+  version: "1.0"
+  image: myelintek/yolov4:1.0
+  gpu: 1
+  hashtag:
+    - yolov4
+    - darknet
+    - object detection
+  volumes:
+    - yolo-sample:/mlsteam/data/yolo
