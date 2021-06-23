@@ -8,6 +8,34 @@
     - tensorflow
   volumes:
     - mnist:/mlsteam/data
+  runtime_params:
+    command: python2 trainer.py
+    params_definition:
+      aug_list:
+        options:
+          - none
+          - color_distort
+          - flip_random
+          - both
+      memory_saving_method:
+        options:
+          - none
+          - recomputing
+      network:
+        options:
+          - lenet
+          - resnet50
+          - vgg16
+    params:
+      aug_list:
+        - none
+      batch_size: 32
+      memory_saving_method:
+        - none
+      network:
+        - lenet
+      num_epochs: 5
+      small_chunk: 1
 
 - name: Pytorch Cifar10
   description: Cifar10 in Pytorch
@@ -19,6 +47,20 @@
     - pytorch
   volumes:
     - cifar10:/mlsteam/data/cifar10
+  runtime_params:
+    command: python train.py
+    params:
+      network:
+      - resnet18
+      num_epochs: 5
+    params_definition:
+      network:
+        options:
+        - mobilenet_v2
+        - inception_v3
+        - googlenet
+        - resnet18
+        - vgg11_bn
 
 - name: Triton Server
   description: Triton Server Example
@@ -41,7 +83,21 @@
     - object detection
   volumes:
     - yolo-sample:/mlsteam/data/yolo
-
+  runtime_params:
+    command: python /mlsteam/lab/darknet_wrapper.py
+    params:
+      num_classes: 20
+      batch: 16
+      subdivisions: 2
+      learning_rate: 0.001
+      max_batches: 10000
+      steps: '400000; 450000'
+      scales: '.1; .1'
+      filters: 75
+      train_dir: '/mlsteam/data/yolo/training_data/yolo/images'
+      backup: '/mlsteam/data/output/yolov3/trained'
+      repeat: 0
+      weights_file: ''
 - name: YOLOv4
   description: YOLOv4 with wrapper tool
   version: "1.0"
@@ -53,3 +109,22 @@
     - object detection
   volumes:
     - yolo-sample:/mlsteam/data/yolo
+  runtime_params:
+    command: python3 /mlsteam/lab/darknet_wrapper.py
+    params:
+      backup: /mlsteam/data/output/model_weights/trained
+      batch: 64
+      learning_rate: 0.001
+      max_batches: 500
+      repeat: 0
+      scales: .1; .1
+      steps: 400; 450
+      subdivisions: 16
+      train_dir: /mlsteam/data/yolo/training_data/yolo/images
+      version: tiny
+      weights_file: ''
+    params_definition:
+      version:
+      options:
+        - tiny
+        - original
