@@ -125,6 +125,6 @@
       weights_file: ''
     params_definition:
       version:
-      options:
-        - tiny
-        - original
+        options:
+          - tiny
+          - original
