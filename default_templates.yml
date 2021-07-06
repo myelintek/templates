@@ -131,7 +131,7 @@
 - name: Face Mask Detection
   description: Face Mask Detection
   version: "1.0"
-  image: myelintek/mask-detection
+  image: myelintek/mask-detection:1.0
   gpu: 1
   hashtag:
     - face detection
