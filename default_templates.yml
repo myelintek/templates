@@ -144,3 +144,11 @@
       epochs: 20
       train_dir: '/mlsteam/dala/lab/Face-Mask-Detection/dataset'
       weights_file: 'mask_detector.model'
+
+- name: Kaldi Speech Recognition
+  description: Kaldi Speech Recognition
+  version: "1.0"
+  image: myelintek/kaldi:latest
+  gpu: 1
+  hashtag:
+    - speech recognition
