@@ -1,6 +1,6 @@
 - name: Image Classification
   description: Image Classification in tensorflow
-  version: "1.0"
+  version: "test"
   image: myelintek/classification:1.0
   gpu: 1
   hashtag:
