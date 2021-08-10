@@ -120,7 +120,7 @@
       scales: .1; .1
       steps: 400; 450
       subdivisions: 16
-      train_dir: /mlsteam/data/yolo/training_data/yolo/images
+      train_dir: /mlsteam/data/yolo/training_data/yolo
       version: tiny
       weights_file: ''
       image_exts: jpg;png
