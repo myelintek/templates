@@ -100,8 +100,8 @@
       weights_file: ''
 - name: YOLOv4
   description: YOLOv4 with wrapper tool
-  version: "1.0"
-  image: myelintek/yolov4:1.0
+  version: "1.1"
+  image: myelintek/yolov4:1.1
   gpu: 1
   hashtag:
     - yolov4
@@ -112,7 +112,7 @@
   runtime_params:
     command: python3 /mlsteam/lab/darknet_wrapper.py
     params:
-      backup: /mlsteam/data/output/model_weights/trained
+      output_dir: /mlsteam/data/yolo/model_weights/trained/yolo
       batch: 64
       learning_rate: 0.001
       max_batches: 500
@@ -123,6 +123,7 @@
       train_dir: /mlsteam/data/yolo/training_data/yolo/images
       version: tiny
       weights_file: ''
+      image_exts: jpg;png
     params_definition:
       version:
         options:
