@@ -1,0 +1,17 @@
+- name: COCO128
+  description: This dataset contains the first 128 images of COCO train 2017
+  hashtag:
+    - coco128
+    - yolov5
+  path: ms3/coco128
+- name: COCO
+  description: This dataset contains COCO 2017 dataset, COCO is a large-scale object detection, segmentation, and captioning dataset
+  hashtag:
+    - coco
+    - yolov5
+  path: ms3/coco
+- name: ImageNet
+  description: This dataset contains ImageNet 2012 dataset, ImageNet is an image database contains 1000 categories and 1.2 million images
+  hashtag:
+    - imagenet
+  path: ms3/imagenet
