@@ -3,9 +3,11 @@
   version: "1.0"
   image: myelintek/classification:1.0
   gpu: 1
+  type: image
   hashtag:
     - image classification
     - tensorflow
+    - lab
   volumes:
     - mnist:/mlsteam/data
   runtime_params:
@@ -42,33 +44,38 @@
   version: "1.0"
   image: myelintek/pytorch-cifar10:1.0
   gpu: 1
+  type: image
   hashtag:
     - classification
     - pytorch
+    - lab
   volumes:
     - cifar10:/mlsteam/data/cifar10
   runtime_params:
     command: python train.py
     params:
       network:
-      - resnet18
+        - resnet18
       num_epochs: 5
     params_definition:
       network:
         options:
-        - mobilenet_v2
-        - inception_v3
-        - googlenet
-        - resnet18
-        - vgg11_bn
+          - mobilenet_v2
+          - inception_v3
+          - googlenet
+          - resnet18
+          - vgg11_bn
 
 - name: Triton Server
   description: Triton Server Example
   version: "1.0"
   image: myelintek/triton:1.0
   gpu: 1
+  type: image
   hashtag:
     - triton
+    - lab
+    - webapp
   volumes:
     - triton-models:/mlsteam/data/models
 
@@ -77,10 +84,12 @@
   version: "1.0"
   image: myelintek/yolov3:1.0
   gpu: 1
+  type: image
   hashtag:
     - yolov3
     - darknet
     - object detection
+    - lab
   volumes:
     - yolo-sample:/mlsteam/data/yolo
   runtime_params:
@@ -91,22 +100,25 @@
       subdivisions: 2
       learning_rate: 0.001
       max_batches: 10000
-      steps: '400000; 450000'
-      scales: '.1; .1'
+      steps: "400000; 450000"
+      scales: ".1; .1"
       filters: 75
-      train_dir: '/mlsteam/data/yolo/training_data/yolo/images'
-      backup: '/mlsteam/data/output/yolov3/trained'
+      train_dir: "/mlsteam/data/yolo/training_data/yolo/images"
+      backup: "/mlsteam/data/output/yolov3/trained"
       repeat: 0
-      weights_file: ''
+      weights_file: ""
+
 - name: YOLOv4
   description: YOLOv4 with wrapper tool
   version: "1.1"
   image: myelintek/yolov4:1.1
   gpu: 1
+  type: image
   hashtag:
     - yolov4
     - darknet
     - object detection
+    - lab
   volumes:
     - yolo-sample:/mlsteam/data/yolo
   runtime_params:
@@ -122,42 +134,75 @@
       subdivisions: 16
       train_dir: /mlsteam/data/yolo/training_data/yolo
       version: tiny
-      weights_file: ''
+      weights_file: ""
       image_exts: jpg;png
     params_definition:
       version:
         options:
           - tiny
           - original
+
 - name: Face Mask Detection
   description: Face Mask Detection
   version: "1.0"
   image: myelintek/mask-detection:1.0
   gpu: 1
+  type: image
   hashtag:
     - face detection
     - mask detection
+    - lab
   runtime_params:
     command: ipython3 entry.ipynb
     params:
       batch: 32
       learning_rate: 0.0001
       epochs: 20
-      train_dir: '/mlsteam/dala/lab/Face-Mask-Detection/dataset'
-      weights_file: 'mask_detector.model'
+      train_dir: "/mlsteam/dala/lab/Face-Mask-Detection/dataset"
+      weights_file: "mask_detector.model"
 
 - name: Kaldi Speech Recognition
   description: Kaldi Speech Recognition
   version: "1.0"
   image: myelintek/kaldi:latest
+  type: image
   gpu: 1
   hashtag:
     - speech recognition
+    - lab
+
 - name: YOLOv5 ROCm
   description: Yolov5 on ROCm GPU
   version: "1"
   image: myelintek/yolov5-rocm:6.1
   gpu: 1
+  type: image
   hashtag:
     - yolov5
     - rocm
+    - lab
+    - webapp
+
+- name: Demo service
+  description: Custom inference
+  version: "1"
+  image: myelintek/demo-service:v1.0
+  gpu: 1
+  type: image
+  configs:
+    bind: 80,
+    protocol: "HTTP"
+  hashtag:
+    - webapp
+    - demo
+    - inference
+
+- name: CVAT
+  description: Dataset labeling tool
+  version: "1"
+  compose_file: docker-compose.yml
+  type: compose
+  hashtag:
+    - webapp
+    - dataset
+    - labeling
