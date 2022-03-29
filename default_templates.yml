@@ -39,8 +39,8 @@
 
 - name: Pytorch Cifar10
   description: Cifar10 in Pytorch
-  version: "1.0.1"
-  image: myelintek/pytorch-cifar10:1.0.1
+  version: "1.0.2"
+  image: myelintek/pytorch-cifar10:1.0.2
   gpu: 1
   hashtag:
     - classification
