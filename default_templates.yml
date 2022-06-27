@@ -164,11 +164,13 @@
 - name: Stock Predict LSTM
   description: LSTM time series data (stock price) prediction
   version: "1.0"
-  image: myelintek/stock-pred:latest
+  image: myelintek/stock-pred:1.0
   gpu: 0
   hashtag:
     - lstm
     - time series predict
+  volumes:
+    - stock-prices:/mlsteam/data/stock_prices
   runtime_params:
     command: ptython train.py
     params:
@@ -179,4 +181,4 @@
       data_path: /mlsteam/data/stock_prices/20220512_tesla.pkl
       scaler_path: /working/scaler.pkl
       model_path: /working/
-
+  
