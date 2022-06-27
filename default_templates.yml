@@ -161,3 +161,22 @@
   hashtag:
     - yolov5
     - rocm
+- name: Stock Predict LSTM
+  description: LSTM time series data (stock price) prediction
+  version: "1.0"
+  image: myelintek/stock-pred:latest
+  gpu: 0
+  hashtag:
+    - lstm
+    - time series predict
+  runtime_params:
+    command: ptython train.py
+    params:
+      widow: 50
+      epochs: 15
+      batch: 20
+      test_ratio: 0.2
+      data_path: /mlsteam/data/stock_prices/20220512_tesla.pkl
+      scaler_path: /working/scaler.pkl
+      model_path: /working/
+
