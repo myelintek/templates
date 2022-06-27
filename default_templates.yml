@@ -180,5 +180,5 @@
       test_ratio: 0.2
       data_path: /mlsteam/data/stock_prices/20220512_tesla.pkl
       scaler_path: /working/scaler.pkl
-      model_path: /working/
+      model_path: /working/1/
   
