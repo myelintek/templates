@@ -181,4 +181,11 @@
       data_path: /mlsteam/data/stock_prices/20220512_tesla.pkl
       scaler_path: /working/scaler.pkl
       model_path: /working/1/
-  
+- name: TensorFlow ROCm
+  description: TensorFlow on ROCm GPU
+  version: "1.0"
+  image: cr.myelintek.com/public/tensorflow-rocm:1.0
+  gpu: 1
+  hashtag:
+    - tensorflow
+    - rocm
