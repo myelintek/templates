@@ -182,10 +182,20 @@
       scaler_path: /working/scaler.pkl
       model_path: /working/1/
 - name: TensorFlow ROCm
-  description: TensorFlow on ROCm GPU
+  description: TensorFlow 2.7 on ROCm GPU
   version: "1.0"
   image: cr.myelintek.com/public/tensorflow-rocm:1.0
   gpu: 1
   hashtag:
-    - tensorflow
+    - AI
     - rocm
+    - tensorflow
+- name: PyTorch ROCm
+  description: PyTorch 1.10.0 on ROCm GPU
+  version: "2.0"
+  image: cr.myelintek.com/public/pytorch-rocm:2.0
+  gpu: 1
+  hashtag:
+    - AI
+    - rocm
+    - pytorch
