@@ -199,3 +199,12 @@
     - AI
     - rocm
     - pytorch
+- name: HPCG ROCm
+  description: HPCG benchmarking 3.1 on ROCm GPU
+  version: "1.0"
+  image: cr.myelintek.com/public/hpcg-rocm:1.0
+  gpu: 1
+  hashtag:
+    - HPC
+    - rocm
+    - hpcg
