@@ -208,3 +208,14 @@
     - HPC
     - rocm
     - hpcg
+- name: BERT TensorFlow ROCm
+  description: BERT models using TensorFlow on ROCm GPU
+  version: "1.0"
+  image: cr.myelintek.com/public/bert-tensorflow-rocm:1.0
+  gpu: 1
+  hashtag:
+    - AI
+    - rocm
+    - tensorflow
+    - bert
+    - text classification
