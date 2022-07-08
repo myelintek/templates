@@ -182,36 +182,44 @@
       scaler_path: /working/scaler.pkl
       model_path: /working/1/
 - name: TensorFlow ROCm
-  description: TensorFlow 2.7 on ROCm GPU
+  description: |
+    TensorFlow 2.7 on ROCm GPU.
+    It is based on the TensorFlow container image on AMD Infinity Hub.
   version: "1.0"
-  image: cr.myelintek.com/public/tensorflow-rocm:1.0
+  image: myelintek/tensorflow-rocm:1.0
   gpu: 1
   hashtag:
     - AI
     - rocm
     - tensorflow
 - name: PyTorch ROCm
-  description: PyTorch 1.10.0 on ROCm GPU
+  description: |
+    PyTorch 1.10.0 on ROCm GPU.
+    It is based on the PyTorch container image on AMD Infinity Hub.
   version: "2.0"
-  image: cr.myelintek.com/public/pytorch-rocm:2.0
+  image: myelintek/pytorch-rocm:2.0
   gpu: 1
   hashtag:
     - AI
     - rocm
     - pytorch
 - name: HPCG ROCm
-  description: HPCG benchmarking 3.1 on ROCm GPU
+  description: |
+    HPCG benchmarking 3.1 on ROCm GPU.
+    It is based on the HPCG container image on AMD Infinity Hub.
   version: "1.0"
-  image: cr.myelintek.com/public/hpcg-rocm:1.0
+  image: myelintek/hpcg-rocm:1.0
   gpu: 1
   hashtag:
     - HPC
     - rocm
     - hpcg
 - name: BERT TensorFlow ROCm
-  description: BERT models using TensorFlow on ROCm GPU
+  description: |
+    BERT models using TensorFlow on ROCm GPU.
+    It is based on the TensorFlow container image on AMD Infinity Hub.
   version: "1.0"
-  image: cr.myelintek.com/public/bert-tensorflow-rocm:1.0
+  image: myelintek/bert-tensorflow-rocm:1.0
   gpu: 1
   hashtag:
     - AI
