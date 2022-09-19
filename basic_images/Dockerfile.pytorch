@@ -1,0 +1,4 @@
+FROM nvcr.io/nvidia/pytorch:22.08-py3
+RUN apt update && \
+    apt install openssh-server
+COPY mlsteam.yml /mlsteam/lab/mlsteam.yml

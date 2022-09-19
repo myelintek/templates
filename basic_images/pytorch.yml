@@ -1,0 +1,8 @@
+name: Pytorch basic
+description: Pytorch image
+version: "1.0"
+image: myelintek/pytorch:22.08
+gpu: 1
+hashtag:
+  - pytorch
+  - "22.08"
