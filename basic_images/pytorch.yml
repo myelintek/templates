@@ -5,4 +5,4 @@ image: myelintek/pytorch:22.08
 gpu: 1
 hashtag:
   - pytorch
-  - "22.08"
+  - "1.13"
