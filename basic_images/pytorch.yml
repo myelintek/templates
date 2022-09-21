@@ -1,0 +1,12 @@
+name: PyTorch basic
+description: |
+  PyTorch 1.13 on NVIDIA GPU.
+  It is based on the PyTorch container image from NGC.
+  Base image: nvcr.io/nvidia/pytorch:22.08-py3
+version: "1.0"
+image: myelintek/pytorch:22.08
+gpu: 1
+hashtag:
+  - AI
+  - pytorch
+  - "1.13"
