@@ -4,7 +4,7 @@ description: |
   It is based on the PyTorch container image from NGC.
   Base image: nvcr.io/nvidia/pytorch:22.08-py3
 version: "1.0"
-image: nvcr.io/nvidia/pytorch:22.08-py3
+image: myelintek/pytorch:22.08
 gpu: 1
 hashtag:
   - AI
