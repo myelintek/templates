@@ -1,0 +1,38 @@
+name: Image Classification
+description: Image Classification in tensorflow
+version: "1.0"
+image: myelintek/classification:1.0
+gpu: 1
+hashtag:
+  - image classification
+  - tensorflow
+volumes:
+  - mnist:/mlsteam/data
+runtime_params:
+  command: python2 trainer.py
+  params_definition:
+    aug_list:
+      options:
+        - none
+        - color_distort
+        - flip_random
+        - both
+    memory_saving_method:
+      options:
+        - none
+        - recomputing
+    network:
+      options:
+        - lenet
+        - resnet50
+        - vgg16
+  params:
+    aug_list:
+      - none
+    batch_size: 32
+    memory_saving_method:
+      - none
+    network:
+      - lenet
+    num_epochs: 5
+    small_chunk: 1

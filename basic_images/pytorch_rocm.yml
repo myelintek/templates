@@ -1,0 +1,12 @@
+name: PyTorch ROCm
+description: |
+  PyTorch 1.10.0 on ROCm GPU.
+  It is based on the PyTorch container image on AMD Infinity Hub.
+  Base image: amdih/pytorch:rocm5.0_ubuntu18.04_py3.7_pytorch_1.10.0
+version: "2.0"
+image: myelintek/pytorch-rocm:2.0
+gpu: 1
+hashtag:
+  - AI
+  - rocm
+  - pytorch

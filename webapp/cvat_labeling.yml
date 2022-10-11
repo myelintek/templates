@@ -1,0 +1,23 @@
+types: webapp
+format: v2
+driver: cvat
+author: MLSteam
+description: 'CVAT: labeling tool for computer vision machine leaning data. The default
+  account/password is admin/cvat@mlsteam'
+driver: cvat
+env:
+  compose_template: /usr/local/lib/python3.8/dist-packages/mlsteam/mlsteam/mlsteam/cvat
+hashtags:
+- Computer vision
+- Labeling tool
+name: CVAT Labeling
+params:
+  folder:
+    default: ''
+    multiple: false
+    required: true
+    type: dataset
+  name:
+    required: true
+    type: string
+version: 1.1.1

@@ -1,0 +1,8 @@
+name: YOLOv5 ROCm
+description: Yolov5 on ROCm GPU
+version: "1"
+image: myelintek/yolov5-rocm:6.1
+gpu: 1
+hashtag:
+  - yolov5
+  - rocm

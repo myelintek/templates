@@ -1,12 +1,8 @@
 name: Tensorflow basic
-description: |
-  TensorFlow 2.9 on NVIDIA GPU.
-  It is based on the TensorFlow container image from NGC.
-  Base image: nvcr.io/nvidia/tensorflow:22.08-tf2-py3
+description: Tensorflow image
 version: "1.0"
 image: myelintek/tensorflow:22.08
 gpu: 1
 hashtag:
-  - AI
   - tensorflow
   - "2.9"

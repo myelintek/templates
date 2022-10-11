@@ -1,0 +1,33 @@
+types: webapp
+format: v2
+author: MLSteam
+description: Classification Demo service
+driver: docker
+env:
+  command: python3 main.py
+  image: myelintek/demo-service:v1.0
+  requirements: {}
+hashtags:
+- Image Classification
+name: Classification Demo
+params:
+  bind:
+    category: env
+    default: '80'
+    required: true
+    type: integer
+  flavor:
+    category: env
+    default: ''
+    required: true
+    type: flavor
+  name:
+    category: env
+    required: true
+    type: string
+  protocol:
+    category: env
+    default: HTTP
+    required: true
+    type: string
+version: v1.0.2

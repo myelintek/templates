@@ -1,0 +1,38 @@
+type: action
+format: v2
+author: MLSteam
+description: Pull source code from git repository
+driver: action
+env:
+  action_type: GIT_PULL_ACTION
+hashtags:
+- Git
+name: Git Pull
+params:
+  branch:
+    category: git
+    default: master
+    required: true
+    type: string
+  git_url:
+    category: git
+    required: true
+    type: string
+  name:
+    category: settings
+    default: ''
+    type: string
+  password:
+    category: git
+    default: ''
+    type: password
+  target_folder:
+    category: git
+    default: ''
+    required: false
+    type: string
+  username:
+    category: git
+    default: ''
+    type: string
+version: v0.1

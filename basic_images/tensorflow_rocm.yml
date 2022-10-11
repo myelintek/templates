@@ -1,0 +1,12 @@
+name: TensorFlow ROCm
+description: |
+  TensorFlow 2.7 on ROCm GPU.
+  It is based on the TensorFlow container image on AMD Infinity Hub.
+  Base image: amdih/tensorflow:rocm5.0-tf2.7-dev
+version: "1.0"
+image: myelintek/tensorflow-rocm:1.0
+gpu: 1
+hashtag:
+  - AI
+  - rocm
+  - tensorflow

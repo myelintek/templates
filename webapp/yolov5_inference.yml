@@ -1,0 +1,42 @@
+format: v2
+driver: docker
+types: webapp
+author: MLSteam
+description: Pytorch 1.10.3 with yolov5 6.1 ver. Inference service,             Please
+  put "yolov5.pt" file on "/working" folder.
+env:
+  command: streamlit run streamlit.py -- --device=0
+  image: myelintek/yolov5:v6.1-mls-1.0.3
+  requirements:
+    gpu: 1
+    memory: 8192
+hashtags:
+- Object Detection
+- YOLOv5
+- Pytorch
+name: YOLOv5 Inference
+params:
+  bind:
+    category: env
+    default: '8501'
+    required: true
+    type: integer
+  flavor:
+    category: env
+    default: ''
+    required: true
+    type: flavor
+  model:
+    category: env
+    required: true
+    type: model
+  name:
+    category: env
+    required: true
+    type: string
+  protocol:
+    category: env
+    default: HTTP
+    required: true
+    type: string
+version: v1.0.3

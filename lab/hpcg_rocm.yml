@@ -1,0 +1,12 @@
+name: HPCG ROCm
+description: |
+  HPCG benchmarking 3.1 on ROCm GPU.
+  It is based on the HPCG container image on AMD Infinity Hub.
+  Base image: amdih/rochpcg:3.1.0_97
+version: "1.0"
+image: myelintek/hpcg-rocm:1.0
+gpu: 1
+hashtag:
+  - HPC
+  - rocm
+  - hpcg

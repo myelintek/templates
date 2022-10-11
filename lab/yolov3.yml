@@ -1,0 +1,26 @@
+name: YOLOv3
+description: YOLOv3 with wrapper tool
+version: "1.0"
+image: myelintek/yolov3:1.0
+gpu: 1
+hashtag:
+  - yolov3
+  - darknet
+  - object detection
+volumes:
+  - yolo-sample:/mlsteam/data/yolo
+runtime_params:
+  command: python /mlsteam/lab/darknet_wrapper.py
+  params:
+    num_classes: 20
+    batch: 16
+    subdivisions: 2
+    learning_rate: 0.001
+    max_batches: 10000
+    steps: '400000; 450000'
+    scales: '.1; .1'
+    filters: 75
+    train_dir: '/mlsteam/data/yolo/training_data/yolo/images'
+    backup: '/mlsteam/data/output/yolov3/trained'
+    repeat: 0
+    weights_file: ''

@@ -1,0 +1,13 @@
+name: PyTorch ZenDNN
+description: |
+  PyTorch 1.11.0 with AMD Zen Deep Neural Network (ZenDNN) v3.3 acceleration.
+  It runs on AMD 3rd-generation EPYC processors.
+  ZenDNN website: https://developer.amd.com/zendnn/
+version: "1.0"
+image: myelintek/zendnn-pytorch:1.11.0
+gpu: 0
+hashtag:
+  - AI
+  - epyc
+  - pytorch
+  - zendnn

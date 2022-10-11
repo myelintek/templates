@@ -1,0 +1,35 @@
+type: action
+format: v2
+author: MLSteam
+description: Run docker container base task
+driver: action
+env:
+  action_type: DOCKER_RUN_ACTION
+hashtags:
+- Docker
+name: Docker Run
+params:
+  command:
+    category: command
+    default: ''
+    required: true
+    type: textarea
+  container:
+    category: environment
+    default: ''
+    required: true
+    type: image
+  flavor:
+    category: environment
+    default: ''
+    required: true
+    type: flavor
+  name:
+    category: settings
+    required: true
+    type: string
+  volumes:
+    category: filesystem
+    default: []
+    type: volumes
+version: v0.3

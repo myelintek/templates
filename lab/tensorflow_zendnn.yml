@@ -1,0 +1,13 @@
+name: TensorFlow ZenDNN
+description: |
+  TensorFlow v2.9 with AMD Zen Deep Neural Network (ZenDNN) v3.3 acceleration.
+  It runs on AMD 3rd-generation EPYC processors.
+  ZenDNN website: https://developer.amd.com/zendnn/
+version: "1.0"
+image: myelintek/zendnn-tensorflow:2.9
+gpu: 0
+hashtag:
+  - AI
+  - epyc
+  - tensorflow
+  - zendnn

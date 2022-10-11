@@ -1,0 +1,9 @@
+name: Triton Server
+description: Triton Server Example
+version: "1.0"
+image: myelintek/triton:1.0
+gpu: 1
+hashtag:
+  - triton
+volumes:
+  - triton-models:/mlsteam/data/models
