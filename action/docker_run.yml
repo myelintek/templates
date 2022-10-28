@@ -1,4 +1,4 @@
-type: action
+types: action
 format: v2
 author: MLSteam
 description: Run docker container base task
