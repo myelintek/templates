@@ -1,4 +1,5 @@
 name: PyTorch ROCm
+author: MLSteam
 description: |
   PyTorch 1.10.0 on ROCm GPU.
   It is based on the PyTorch container image on AMD Infinity Hub.

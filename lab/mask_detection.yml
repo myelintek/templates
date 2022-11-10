@@ -1,4 +1,5 @@
 name: Face Mask Detection
+author: MLSteam
 description: Face Mask Detection
 version: "1.0"
 image: myelintek/mask-detection:1.0

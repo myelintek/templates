@@ -1,4 +1,5 @@
 name: Stock Predict LSTM
+author: MLSteam
 description: LSTM time series data (stock price) prediction
 version: "1.0"
 image: myelintek/stock-pred:1.0

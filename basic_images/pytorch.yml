@@ -1,4 +1,5 @@
 name: Pytorch basic
+author: MLSteam
 description: Pytorch image
 version: "1.0"
 image: myelintek/pytorch:22.08

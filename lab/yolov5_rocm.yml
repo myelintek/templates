@@ -1,4 +1,5 @@
 name: YOLOv5 ROCm
+author: MLSteam
 description: Yolov5 on ROCm GPU
 version: "1"
 image: myelintek/yolov5-rocm:6.1

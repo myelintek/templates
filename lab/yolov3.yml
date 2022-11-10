@@ -1,4 +1,5 @@
 name: YOLOv3
+author: MLSteam
 description: YOLOv3 with wrapper tool
 version: "1.0"
 image: myelintek/yolov3:1.0

@@ -1,4 +1,5 @@
 name: Triton Server
+author: MLSteam
 description: Triton Server Example
 version: "1.0"
 image: myelintek/triton:1.0

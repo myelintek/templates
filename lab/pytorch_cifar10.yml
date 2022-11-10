@@ -1,4 +1,5 @@
 name: Pytorch Cifar10
+author: MLSteam
 description: Cifar10 in Pytorch
 version: "1.0.2"
 image: myelintek/pytorch-cifar10:1.0.2

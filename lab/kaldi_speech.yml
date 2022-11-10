@@ -1,4 +1,5 @@
 name: Kaldi Speech Recognition
+author: MLSteam
 description: Kaldi Speech Recognition
 version: "1.0"
 image: myelintek/kaldi:latest

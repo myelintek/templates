@@ -1,4 +1,5 @@
 name: TensorFlow ROCm
+author: MLSteam
 description: |
   TensorFlow 2.7 on ROCm GPU.
   It is based on the TensorFlow container image on AMD Infinity Hub.

@@ -1,4 +1,5 @@
 name: Tensorflow basic
+author: MLSteam
 description: Tensorflow image
 version: "1.0"
 image: myelintek/tensorflow:22.08

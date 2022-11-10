@@ -1,4 +1,5 @@
 name: TensorFlow ZenDNN
+author: MLSteam
 description: |
   TensorFlow v2.9 with AMD Zen Deep Neural Network (ZenDNN) v3.3 acceleration.
   It runs on AMD 3rd-generation EPYC processors.

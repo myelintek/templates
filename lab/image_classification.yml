@@ -1,4 +1,5 @@
 name: Image Classification
+author: MLSteam
 description: Image Classification in tensorflow
 version: "1.0"
 image: myelintek/classification:1.0
