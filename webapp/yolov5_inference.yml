@@ -5,8 +5,7 @@ author: MLSteam
 description: Pytorch 1.10.3 with yolov5 6.1 ver. Inference service,             Please
   put "yolov5.pt" file on "/working" folder.
 env:
-streamlit run --server.enableXsrfProtection=false streamlit.py -- --device=0
-  command: streamlit run streamlit.py -- --device=0
+  command: streamlit run --server.enableXsrfProtection=false streamlit.py -- --device=0
   image: myelintek/yolov5:v6.1-mls-1.0.3
   requirements:
     gpu: 1
