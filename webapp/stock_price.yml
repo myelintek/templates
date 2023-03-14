@@ -1,11 +1,10 @@
 types: webapp
 format: v2
 author: MLSteam
-description: LSTM to predict the stock price ,             Please put "scaler.pkl"
-  file and model folder on "/working" folder.
+description: LSTM to predict the stock price. Please select a model version, which contains "scaler.pkl" and the model folder "1/", and mount on on the "/working" folder.
 driver: docker
 env:
-  command: streamlit run web.py --server.headless=true --server.enableWebsocketCompression=false
+  command: (tensorflow_model_server --rest_api_port=5050 --model_name=stock_pred --model_base_path=/working/ & ) && streamlit run web.py --server.headless=true --server.enableWebsocketCompression=false
   image: myelintek/stock-pred:1.0
 hashtags:
 - Stock prices prediction
@@ -35,4 +34,4 @@ params:
     default: HTTP
     required: true
     type: string
-version: '1.0'
+version: '2.0'
