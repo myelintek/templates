@@ -40,6 +40,9 @@ params:
     type: string
   volumes:
     default:
+    - yolo-sample:/label-studio/data
     - yolo-sample:/data
     type: volumes
-version: v1.4.1
+    mountPoint: ""
+    mountPointEditable: false
+version: v1.4.4
