@@ -1,6 +1,5 @@
 types: webapp
 format: v2
-driver: cvat
 author: MLSteam
 description: 'CVAT: labeling tool for computer vision machine leaning data. The default
   account/password is admin/cvat@mlsteam'
