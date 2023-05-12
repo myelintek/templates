@@ -1,0 +1,44 @@
+types: webapp
+format: v2
+author: MLSteam
+description: MonAI
+driver: docker
+env:
+  command: | 
+    monailabel apps &&
+    monailabel apps --download --name radiology --output apps &&
+    monailabel datasets &&
+    monailabel datasets --download --name Task09_Spleen --output datasets &&
+    monailabel start_server --app apps/radiology --studies datasets/Task09_Spleen/imagesTr --conf models deepedit
+  image: projectmonai/monailabel:latest
+  requirements: {}
+  volumes:
+  - yolo-sample:/data
+hashtags:
+- Labeling Tool
+- MONAI
+- 3D Slicer
+name: MonAI Label
+params:
+  bind:
+    default: '8000'
+    required: true
+    state: view
+    type: integer
+  flavor:
+    default: ''
+    required: true
+    type: flavor
+  name:
+    required: true
+    type: string
+  protocol:
+    default: HTTP
+    required: true
+    state: view
+    type: string
+  volumes:
+    default:
+    - yolo-sample:/data
+    type: volumes
+version: v0.6.0
