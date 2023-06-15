@@ -14,7 +14,7 @@ hashtags:
 - Image
 - Text
 - Time Series
-name: Lable Studio
+name: Label Studio
 params:
   name:
     required: true
