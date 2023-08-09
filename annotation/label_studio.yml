@@ -1,0 +1,32 @@
+types: annotation
+format: v2
+author: MLSteam
+description: A flexible data annotation tool. Users may build custom
+  UIs or use pre-built labeling templates. Selected dataset will be mouted at /data/ds1.
+  Please follow the document to setup local-storage at that path.
+  https://labelstud.io/guide/storage.html#Local-storage
+driver: labelstudio
+env:
+  compose_template: /usr/local/lib/python3.8/dist-packages/mlsteam/mlsteam/mlsteam/label_studio
+hashtags:
+- Labeling Tool
+- Audio
+- Image
+- Text
+- Time Series
+name: Label Studio
+params:
+  name:
+    required: true
+    type: string
+  folders:
+    default: ['']  # TODO:
+    multiple: true
+    required: true
+    type: dataset
+  version:
+    required: true
+    hidden: true  # TODO:
+    type: string
+    default: '1.8.0'
+version: '1.8.0'
