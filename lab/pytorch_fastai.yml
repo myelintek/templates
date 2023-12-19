@@ -1,4 +1,4 @@
-name: PyTorch ZenDNN
+name: PyTorch fastai
 author: MLSteam
 description: |
   Based on Nvidia PyTorch release 22.08 (which pytorch version 1.13.0a0+d321be6)
