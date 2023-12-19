@@ -1,0 +1,11 @@
+name: PyTorch ZenDNN
+author: MLSteam
+description: |
+  Based on Nvidia PyTorch release 22.08 (which pytorch version 1.13.0a0+d321be6)
+  Including fastai and tabular example.
+version: "1.0"
+image: myelintek/pytorch-fastai:1.0
+gpu: 0
+hashtag:
+  - pytorch
+  - fastai
