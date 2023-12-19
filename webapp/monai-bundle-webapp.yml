@@ -28,9 +28,10 @@ params:
     default: ''
     required: true
     type: flavor
-  name:
-    default: 'wholeBody_ct_segmentation'
-    required: true
+  MODEL:
+    default: wholeBody_ct_segmentation
+    required: false
+    state: edit
     type: string
   protocol:
     default: HTTP
@@ -42,4 +43,4 @@ params:
     - data:/data
     - models:/models
     type: volumes
-version: v1.0
+version: 0.7.0.2
