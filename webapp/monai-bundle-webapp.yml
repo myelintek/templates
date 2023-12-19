@@ -1,0 +1,46 @@
+types: webapp
+format: v2
+author: MLSteam
+description: MonAI bundle WebAppp
+driver: docker
+env:
+  command: |
+    python -m monai.bundle download "$MODEL" --bundle_dir "/models/monaibundle/model" &&
+    mkdir /data/$MODEL &&
+    monailabel start_server --app /models/monaibundle --studies /data/$MODEL --conf models $MODEL
+  image: projectmonai/monailabel:0.7.0
+  requirements: {}
+  volumes:
+  - data:/data
+  - models:/models
+hashtags:
+- Labeling Tool
+- MONAI
+- 3D Slicer
+name: Monaibundle
+params:
+  bind:
+    default: '8000'
+    required: true
+    state: view
+    type: integer
+  flavor:
+    default: ''
+    required: true
+    type: flavor
+  MODEL:
+    default: wholeBody_ct_segmentation
+    required: false
+    state: edit
+    type: string
+  protocol:
+    default: HTTP
+    required: true
+    state: view
+    type: string
+  volumes:
+    default:
+    - data:/data
+    - models:/models
+    type: volumes
+version: 0.7.0.2

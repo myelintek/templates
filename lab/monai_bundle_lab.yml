@@ -1,0 +1,14 @@
+name: Monai Bundle Lab
+author: MLSteam
+description: |
+  Based on monailabel 0.7.0 with monai bundle app
+  Including breast_density_classification example
+version: "1.0"
+image: myelintek/monai-bundle-lab:1.0
+gpu: 0
+hashtag:
+  - pytorch
+  - fastai
+volumes:
+  - data:/data
+  - models:/models
