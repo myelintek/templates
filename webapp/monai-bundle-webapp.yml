@@ -1,8 +1,7 @@
-monai bundle WebAppp
 types: webapp
 format: v2
 author: MLSteam
-description: MonAI
+description: MonAI bundle WebAppp
 driver: docker
 env:
   command: |
@@ -30,7 +29,7 @@ params:
     required: true
     type: flavor
   name:
-	default: 'wholeBody_ct_segmentation'
+    default: 'wholeBody_ct_segmentation'
     required: true
     type: string
   protocol:
@@ -41,6 +40,6 @@ params:
   volumes:
     default:
     - data:/data
-	- models:/models
+    - models:/models
     type: volumes
 version: v1.0
