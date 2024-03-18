@@ -1,0 +1,33 @@
+types: webapp
+format: v2
+author: MLSteam
+description: Riva-Contact WebApp
+driver: docker
+env:
+  command: |
+    nohup start-riva --riva-uri=0.0.0.0:50051 \
+        --asr_service=true \
+        --tts_service=true \
+        --nlp_service=true &
+    sleep 10
+    cd /data/riva-contact &&
+    npm install &&
+    npm run start
+  image: myelintek/riva-contact:rc1
+  requirements: {}
+hashtags:
+- speech to text
+- Riva
+name: Rica-Contact
+params:
+  portmaps:
+    default:
+    - 8009/tcp
+    - 9000/tcp
+    state: edit
+    type: portmaps
+  url:
+    default: https://${IP}:${PORT}
+    state: view
+    'type:': string
+version: 1.0.0
