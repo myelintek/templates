@@ -1,0 +1,18 @@
+name: YOLOv7
+author: MLSteam
+description: YOLOv7 with mlflow and bentoml
+format: v2
+type: lab
+version: "0.1"
+env:
+  image: myelintek/yolov7:mls-0.1
+  requirements:
+    gpu: 1
+    cpu: 2
+    memory: 10240
+hashtag:
+  - yolov7
+  - pytorch
+  - mlflow
+  - bentoml
+  - object detection
