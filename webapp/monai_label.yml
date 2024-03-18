@@ -10,7 +10,7 @@ env:
     monailabel datasets &&
     monailabel datasets --download --name Task09_Spleen --output datasets &&
     monailabel start_server --app apps/radiology --studies datasets/Task09_Spleen/imagesTr --conf models deepedit
-  image: projectmonai/monailabel:latest
+  image: projectmonai/monailabel:0.6.0
   requirements: {}
   volumes:
   - yolo-sample:/data
