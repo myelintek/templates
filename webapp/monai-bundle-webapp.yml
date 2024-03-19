@@ -6,7 +6,7 @@ driver: docker
 env:
   command: |
     python -m monai.bundle download "$MODEL" --bundle_dir "/models/monaibundle/model" &&
-    mkdir /data/$MODEL &&
+    mkdir -p /data/$MODEL &&
     monailabel start_server --app /models/monaibundle --studies /data/$MODEL --conf models $MODEL
   image: projectmonai/monailabel:0.7.0
   requirements: {}
