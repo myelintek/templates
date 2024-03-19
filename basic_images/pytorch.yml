@@ -1,9 +1,9 @@
 name: Pytorch basic
 author: MLSteam
 description: Pytorch image
-version: "1.0"
-image: myelintek/pytorch:22.08
+version: "2.0"
+image: myelintek/pytorch:24.02
 gpu: 1
 hashtag:
   - pytorch
-  - "1.13"
+  - "2.3"
