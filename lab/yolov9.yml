@@ -1,0 +1,17 @@
+name: YOLOv9
+author: MLSteam
+description: YOLOv9 with mlflow and bentoml
+format: v2
+type: lab
+version: "0.1"
+env:
+  image: myelintek/yolov9:0.1
+  requirements:
+    gpu: 1
+    cpu: 2
+    memory: 10240
+hashtag:
+  - yolov9
+  - pytorch
+  - mlflow
+  - object detection
