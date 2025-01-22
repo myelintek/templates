@@ -1,2 +1,2 @@
 # templates
-templates for MLSteam
+templates for Manta marketplace

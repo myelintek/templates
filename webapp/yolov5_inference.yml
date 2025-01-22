@@ -1,42 +1,29 @@
-format: v2
-driver: docker
-types: webapp
-author: MLSteam
-description: Pytorch 1.10.3 with yolov5 6.1 ver. Inference service,             Please
-  put "yolov5.pt" file on "/working" folder.
+format: v3
+type: webapp
+driver: pod
+metadata:
+  name: YOLOv5 Inference
+  version: v1.0.5
+  author: MLSteam
+  description: |
+    YOLOv5 inference service (backend: PyTorch 1.10.3).
+    The model should have a "yolov5.pt" file.
+  tags:
+  - Object Detection
+  - YOLOv5
+  - Pytorch
 env:
   command: streamlit run --server.enableXsrfProtection=false streamlit.py -- --device=0
   image: myelintek/yolov5:v6.1-mls-1.0.3
   requirements:
     gpu: 1
     memory: 8192
-hashtags:
-- Object Detection
-- YOLOv5
-- Pytorch
-name: YOLOv5 Inference
 params:
-  bind:
-    category: env
-    default: '8501'
-    required: true
-    type: integer
-  flavor:
-    category: env
-    default: ''
-    required: true
-    type: flavor
-  model:
-    category: env
-    required: true
-    type: model
-  name:
-    category: env
-    required: true
-    type: string
-  protocol:
-    category: env
-    default: HTTP
-    required: true
-    type: string
-version: v1.0.4
+  portmaps:
+  - port: 8501
+    service:
+      type: ingress
+      protocol: http
+  models:
+  - model: yolo
+    mountPath: /working
