@@ -23,7 +23,7 @@ params:
   portmaps:
   - port: "8000/tcp"
     service:
-      type: nodePort
+      type: NodePort
       protocol: http
   folders:
   - folder: yolo-sample:/data

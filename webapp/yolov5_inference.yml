@@ -22,7 +22,7 @@ params:
   portmaps:
   - port: 8501
     service:
-      type: ingress
+      type: Ingress
       protocol: http
   models:
   - model: yolo

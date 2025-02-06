@@ -16,5 +16,5 @@ params:
   portmaps:
   - port: 80
     service:
-      type: ingress
+      type: Ingress
       protocol: http
