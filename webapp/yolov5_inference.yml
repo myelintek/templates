@@ -27,3 +27,4 @@ params:
   models:
   - model: yolo
     mountPath: /working
+    required: true
