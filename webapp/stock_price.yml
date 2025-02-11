@@ -1,37 +1,24 @@
-types: webapp
-format: v2
-author: MLSteam
-description: LSTM to predict the stock price. Please select a model version, which contains "scaler.pkl" and the model folder "1/", and mount on on the "/working" folder.
-driver: docker
+format: v3
+type: webapp
+driver: pod
+metadata:
+  name: Stock price LSTM Inference
+  version: '2.0'
+  author: MLSteam
+  description: LSTM to predict the stock price. Please select a model version, which contains "scaler.pkl" and the model folder "1/".
+  tags:
+  - Stock prices prediction
+  - LSTM
 env:
   command: (tensorflow_model_server --rest_api_port=5050 --model_name=stock_pred --model_base_path=/working/ & ) && streamlit run web.py --server.headless=true --server.enableWebsocketCompression=false
   image: myelintek/stock-pred:1.0
-hashtags:
-- Stock prices prediction
-- LSTM
-name: Stock price LSTM Inference
 params:
-  bind:
-    category: env
-    default: '8501'
+  portmaps:
+  - port: 8501
+    service:
+      type: Ingress
+      protocol: http
+  models:
+  - model: stock_pred
+    mountPath: /working
     required: true
-    type: integer
-  flavor:
-    category: env
-    default: ''
-    required: true
-    type: flavor
-  model:
-    category: env
-    required: true
-    type: model
-  name:
-    category: env
-    required: true
-    type: string
-  protocol:
-    category: env
-    default: HTTP
-    required: true
-    type: string
-version: '2.0'
