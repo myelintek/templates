@@ -1,5 +1,5 @@
 format: v3
-types: webapp
+type: webapp
 driver: pod
 metadata:
   name: Riva-Contact
