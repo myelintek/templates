@@ -25,9 +25,9 @@ params:
   portmaps:
   - port: 8009/tcp
     service:
-      type: Ingress
-      protocol: http
+      type: NodePort
+      protocol: https
   - port: 9000/tcp
     service:
-      type: Ingress
-      protocol: http
+      type: NodePort
+      protocol: https
