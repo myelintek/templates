@@ -20,5 +20,5 @@ params:
       protocol: http
   models:
   - model: stock_pred
-    mountPath: /working
+    mountPoint: /working
     required: true

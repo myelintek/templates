@@ -26,5 +26,5 @@ params:
       protocol: http
   models:
   - model: yolo
-    mountPath: /working
+    mountPoint: /working
     required: true

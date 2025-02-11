@@ -31,8 +31,8 @@ params:
     required: false
   folders:
   - folder: data
-    mountPath: /data
+    mountPoint: /data
     required: true
   - folder: models
-    mountPath: /models
+    mountPoint: /models
     required: true
