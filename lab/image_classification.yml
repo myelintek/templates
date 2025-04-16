@@ -1,9 +1,13 @@
 name: Image Classification
 author: MLSteam
 description: Image Classification in tensorflow
+format: v2
+type: lab
 version: "1.0"
-image: myelintek/classification:1.0
-gpu: 1
+env:
+  image: myelintek/classification:1.0
+  requirements:
+    gpu: 1
 hashtag:
   - image classification
   - tensorflow
