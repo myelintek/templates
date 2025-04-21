@@ -6,13 +6,13 @@ type: lab
 version: "1.0"
 env:
   image: myelintek/classification:1.0
+  volumes:
+    - mnist:/mlsteam/data
   requirements:
     gpu: 1
 hashtag:
   - image classification
   - tensorflow
-volumes:
-  - mnist:/mlsteam/data
 runtime_params:
   command: python2 trainer.py
   params_definition:
