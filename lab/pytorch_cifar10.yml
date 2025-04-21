@@ -1,14 +1,18 @@
 name: Pytorch Cifar10
 author: MLSteam
 description: Cifar10 in Pytorch
+format: v2
+type: lab
 version: "1.0.2"
-image: myelintek/pytorch-cifar10:1.0.2
-gpu: 1
+env:
+  image: myelintek/pytorch-cifar10:1.0.2
+  volumes:
+    - cifar10:/mlsteam/data/cifar10
+  requirements:
+    gpu: 1
 hashtag:
   - classification
   - pytorch
-volumes:
-  - cifar10:/mlsteam/data/cifar10
 runtime_params:
   command: python train.py
   params:
