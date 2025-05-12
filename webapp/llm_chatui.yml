@@ -1,0 +1,49 @@
+types: webapp
+format: v2
+author: MLSteam
+description: ollama and openwebui
+driver: docker
+env:
+  command: |
+    #!/bin/bash
+    start_ollama() {
+      /usr/local/bin/ollama serve
+    }
+    run_model() {
+      local model_name=$1
+      sleep 3
+      /usr/local/bin/ollama pull $model_name
+      /usr/local/bin/ollama run $model_name
+    }
+    export OLLAMA_NUM_PARALLEL=$OLLAMA_NUM_PARALLEL
+    start_ollama &
+    run_model $MODEL &
+    wait $!
+    [ $? -ne 0 ] && exit 1
+    bash ./start.sh
+  image: myelintek/open-webui-ollama:cuda
+  requirements: {}
+hashtags:
+- LLMChatbot
+name: LLMChatWebUI
+params:
+  MODEL:
+    default: "llama3.2:3b"
+    required: true
+    state: edit
+    type: string
+  OLLAMA_NUM_PARALLEL:
+    default: 2
+    required: true
+    state: edit
+    type: string
+  portmaps:
+    default:
+    - 8080/tcp
+    state: edit
+    type: portmaps
+  volumes:
+    default:
+    - model:/mlsteam/data/ollama
+    type: volumes
+version: v0.1.0
