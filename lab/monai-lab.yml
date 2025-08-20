@@ -1,0 +1,12 @@
+name: Monai Lab
+author: MLSteam
+description: |
+  Based on monai 1.5.0 for model download
+version: "1.0"
+image: projectmonai/monai:1.5.0
+gpu: 0
+hashtag:
+  - monai
+volumes:
+  - data:/data
+  - models:/models

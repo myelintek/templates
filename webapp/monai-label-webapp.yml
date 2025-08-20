@@ -1,0 +1,44 @@
+types: webapp
+format: v2
+author: MLSteam
+description: MonAI Label
+driver: docker
+env:
+  command: |
+    mkdir -p /data/$MODEL &&
+    monailabel start_server --app /models/monaibundle --studies /data/$MODEL --conf models $MODEL
+  image: projectmonai/monailabel:0.8.5
+  requirements: {}
+  volumes:
+  - data:/data
+  - models:/models
+hashtags:
+- MONAI
+- 3D Slicer
+name: Monailabel
+params:
+  bind:
+    default: '8000'
+    required: true
+    state: view
+    type: integer
+  flavor:
+    default: ''
+    required: true
+    type: flavor
+  MODEL:
+    default: wholeBody_ct_segmentation
+    required: false
+    state: edit
+    type: string
+  protocol:
+    default: HTTP
+    required: true
+    state: view
+    type: string
+  volumes:
+    default:
+    - data:/data
+    - models:/models
+    type: volumes
+version: 0.8.5

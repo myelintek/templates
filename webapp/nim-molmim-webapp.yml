@@ -1,0 +1,41 @@
+types: webapp
+format: v2
+author: MLSteam
+description: NIM Molmim
+driver: docker
+env:
+  command: |
+    start_server
+  image: nvcr.io/nim/nvidia/molmim:1.0.0 
+  requirements: {}
+  volumes:
+  - data:/home/nvs/.cache
+hashtags:
+- NIM
+- molmim
+name: NIM Molmim
+params:
+  bind:
+    default: '8000'
+    required: true
+    state: view
+    type: integer
+  flavor:
+    default: ''
+    required: true
+    type: flavor
+  NGC_API_KEY:
+    default: 
+    required: false
+    state: edit
+    type: string
+  protocol:
+    default: HTTP
+    required: true
+    state: view
+    type: string
+  volumes:
+    default:
+    - data:/home/nvs/.cache
+    type: volumes
+version: 1.0.0
