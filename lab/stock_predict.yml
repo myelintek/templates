@@ -1,14 +1,18 @@
 name: Stock Predict LSTM
 author: MLSteam
 description: LSTM time series data (stock price) prediction
+format: v2
+type: lab
 version: "1.0"
-image: myelintek/stock-pred:1.0
-gpu: 0
+env:
+  image: myelintek/stock-pred:1.0
+  volumes:
+    - stock-prices:/mlsteam/data/stock_prices
+  requirements:
+    gpu: 0
 hashtag:
   - lstm
   - time series predict
-volumes:
-  - stock-prices:/mlsteam/data/stock_prices
 runtime_params:
   command: ptython train.py
   params:
