@@ -6,6 +6,8 @@ type: lab
 version: "0.1"
 env:
   image: myelintek/yolov7:mls-0.1
+  volumes:
+    - yolo-sample:/mlsteam/data/yolo
   requirements:
     gpu: 1
     cpu: 2

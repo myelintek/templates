@@ -5,6 +5,8 @@ description: Pytorch 1.10.3 with yolov5 6.1 ver. trainer
 driver: docker
 env:
   image: myelintek/yolov5:v6.1-mls-1.0.3
+  volumes:
+    - yolo-sample:/mlsteam/data/yolo
   requirements:
     memory: 8192
 hashtags:
