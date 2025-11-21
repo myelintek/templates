@@ -1,0 +1,46 @@
+format: v3
+type: webapp
+driver: pod
+metadata:
+  name: Ollama Inference API Server
+  version: '1.0'
+  author: MLSteam
+  description: Ollama inferencing server, supports lots of models
+  tags:
+  - Ollama
+  - LLM
+env:
+  command: |
+    #!/bin/bash
+    # Start Ollama server if not running
+    if ! pgrep -x "ollama" > /dev/null; then
+        echo "Starting Ollama server..."
+        export OLLAMA_HOST="0.0.0.0:11434"
+        nohup ollama serve > ~/.ollama/models/ollama_server.log 2>&1 &
+        sleep 3
+    fi
+
+    # Pull the model if not exists
+    if ! ollama list | grep -q "$MODEL"; then
+        echo "Pulling $MODEL model..."
+        ollama pull "$MODEL"
+    fi
+
+    # Keep the script running
+    sleep infinity
+  image: ollama/ollama
+params:
+  portmaps:
+  - port: 11434
+    service:
+      type: NodePort
+      protocol: http
+  folders:
+  - folder: models:/root/.ollama/models
+    required: true
+  vars:
+  - name: MODEL
+    type: string
+    default: gemma3:4b
+    visible: true
+    readOnly: false
